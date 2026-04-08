@@ -1,6 +1,21 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
 
+// Dummy database
+
+let services = [
+    {
+        name: 'Spain',
+        price: 800
+    },
+    {
+        name: "Belgium",
+        price: 400
+    }
+];
+
+
+
 const app = express();
 
 app.engine('handlebars', exphbs.engine({
@@ -15,12 +30,16 @@ app.use(express.static('public'));
 
 // Home
 app.get('/', (req,res) => {
-    res.render('index');
+    res.render('index', {
+        title: "Summer Holidays Ltd"        
+    });
 });
 
 // About us
 app.get('/about-us', (req,res) => {
-    res.render('about-us');
+    res.render('about-us', {
+        title: "About us - Summer Holidays Ltd"
+    });
 });
 
 
