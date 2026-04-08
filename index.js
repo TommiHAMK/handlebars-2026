@@ -5,11 +5,13 @@ const exphbs  = require('express-handlebars');
 let services = [
     {
         name: 'Spain',
-        price: 800
+        price: 800,
+        image: 'spain.jpg'
     },
     {
         name: "Belgium",
-        price: 400
+        price: 400,
+        image: 'belgium.avif'
     }
 ];
 
@@ -46,7 +48,7 @@ app.get('/services', (req,res) => {
     res.render('services', {
         title: "Our holiday trips",
         services: services,  // shortened way: services
-        itemsTotal: services.length
+        itemsTotal: services.length,
     });
 });
 
