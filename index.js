@@ -2,7 +2,6 @@ const express = require('express');
 const exphbs  = require('express-handlebars');
 
 // Dummy database
-
 let services = [
     {
         name: 'Spain',
@@ -39,6 +38,14 @@ app.get('/', (req,res) => {
 app.get('/about-us', (req,res) => {
     res.render('about-us', {
         title: "About us - Summer Holidays Ltd"
+    });
+});
+
+// Services
+app.get('/services', (req,res) => {
+    res.render('services', {
+        title: "Our holiday trips",
+        services: services  // shortened way: services
     });
 });
 
