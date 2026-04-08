@@ -9,9 +9,16 @@ app.engine('handlebars', exphbs.engine({
 
 app.set('view engine', 'handlebars');
 
+// Home
 app.get('/', (req,res) => {
     res.render('index');
 });
+
+// About us
+app.get('/about-us', (req,res) => {
+    res.render('about-us');
+});
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
