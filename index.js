@@ -9,6 +9,10 @@ app.engine('handlebars', exphbs.engine({
 
 app.set('view engine', 'handlebars');
 
+// Static files
+app.use(express.static('public'));
+
+
 // Home
 app.get('/', (req,res) => {
     res.render('index');
