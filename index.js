@@ -53,5 +53,11 @@ app.get('/services', (req,res) => {
 });
 
 
+//Page not found 404
+app.use((req,res,next) => {
+    res.status(404).send('Sorry, page not found. <a href="/">Home</a>');
+});
+
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`App listening on port ${PORT}`));
