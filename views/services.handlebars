@@ -2,5 +2,10 @@
 
 {{! Loop services array of objects }}
 {{#each services}}
-    {{this.name}}<br>
+    <div class="card">
+        <h2>{{this.name}}</h2>
+        <p>Price: {{this.price}}</p>
+    </div>
 {{/each}}
+
+<p class="small">Items listed: {{itemsTotal}}</p>

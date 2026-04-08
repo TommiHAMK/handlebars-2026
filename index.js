@@ -45,7 +45,8 @@ app.get('/about-us', (req,res) => {
 app.get('/services', (req,res) => {
     res.render('services', {
         title: "Our holiday trips",
-        services: services  // shortened way: services
+        services: services,  // shortened way: services
+        itemsTotal: services.length
     });
 });
 
